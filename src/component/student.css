@@ -1,67 +1,100 @@
-
-.body{
+.body {
     margin: 0;
     padding: 0;
 }
+
 .student-form-container {
     width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  margin-top: 100px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .student-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 130px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(8, 8, 8, 0.1);
+    background-image: url("../images/5.jpg"); 
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;   
+}
+
+.a-2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #651111;
+    padding: 10px;
+    font-size: x-large;
+    font-family: "Arial", sans-serif; /* Use fallback fonts */
+    font-weight: 600;
+}
+
+.student-form {
     display: flex;
     flex-direction: column;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 20px;
-  }
-  
-  label {
+}
+
+label {
     font-weight: bold;
-  }
-  
-  input {
+}
+
+input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: border-color 0.3s ease;
-  }
-  
-  input:focus {
+}
+
+input:focus {
     outline: none;
     border-color: #5b9dd9;
-  }
-  
-  button {
+}
+
+button {
     padding: 10px 20px;
-    background-color: #5b9dd9;
-    color: #fff;
+    background-color: #86c0f4;
+    color: #f3051c;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #437bb0;
+    font-family: cursive;
+    font-size: larger;
+}
+
+button:hover {
+    background-color: #011324;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  @media (max-width: 480px) {
+}
+.label{
+    font-family: cursive;
+    font-size: large;
+    font-style: italic;
+    color-scheme: none;
+    color:#060606;
+    text-align: center
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #f43d3d;
+    border-radius: 15px;
+    display: flex;
+    text-align: center;
+    font-style: italic;
+    color: #2f0101;
+}
+
+@media (max-width: 768px) {
     .student-form-container {
-      padding: 10px;
+        padding: 10px;
     }
     
     input {
-      font-size: 14px;
+        font-size: 14px;
     }
-  }
-  
+}
