@@ -11,7 +11,19 @@ function App() {
   return (
     <>
 
-    <Toaster/>
+    <Toaster
+    position="top-center"
+      reverseOrder={false}
+      toastOptions={{
+        style: {
+          fontSize: '15px',
+        },
+        duration: 4000,
+        minWidth: '250px',
+      }}
+
+
+    />
       <BrowserRouter>
        
         <Navbar />
