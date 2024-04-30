@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -19,15 +19,20 @@ const Login = () => {
     axios
       .post(`http://localhost:4000/auth/login`, { username, password, role })
       .then((res) => {
-        console.log("res>>>>>>", res);
         Cookies.set("token", res?.data?.token);
-        navigate("/dashboard");
-        toast.success("Admin logged in successfully");
-        if (res.data.login && res.data.role === "admin") {
+        if (res.data.role === "admin") {
           navigate("/dashboard");
+          toast.success("Admin logged in successfully");
+        }else if(res.data.role === "student"){
+            
+        toast.success("Student logged in successfully");
+          navigate("/");
         }
+        
+
+        // console.log( "ffffff",res);
       })
-    
+
       .catch((err) => {
         console.log("err>>>", err);
         toast.error("Wrong Password");
@@ -74,8 +79,8 @@ const Login = () => {
             <option value="admin" className="">
               Admin
             </option>
-            <option value="user" className="">
-              User
+            <option value="student" className="">
+              Student
             </option>
           </select>
         </div>

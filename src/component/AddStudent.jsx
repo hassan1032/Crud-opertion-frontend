@@ -1,45 +1,47 @@
 import React, { useState } from "react";
 import "../css/student.css";
 import axios from "axios";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
 const AddStudent = () => {
-const navigate = useNavigate();
-const [grade,setGrade] = useState("");
-const [roll,setRoll] = useState("");
-const [username,setUsername] = useState("");
-const [ password, setPassword] = useState('')
+  const navigate = useNavigate();
+  const [grade, setGrade] = useState("");
+  const [roll, setRoll] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-const handleSubmit = (e)=>{
-    e.preventDefault()
-    axios.post(`http://localhost:4000/student/register`, { username, password, roll,grade })
-    .then((res) => {
-    
-
-        Cookies.set("token", res?.data?.token);
-       
-        toast.success("Student Register SuccessFully");
-        if(res.data.message){
-            navigate("/dashboard");
-
-        }
-       
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post(`http://localhost:4000/student/register`, {
+        username,
+        password,
+        roll,
+        grade,
       })
-    
+      .then((res) => {
+        Cookies.set("token", res?.data?.token);
+
+        toast.success("Student Register SuccessFully");
+        if (res.data.message) {
+
+          navigate("/dashboard");
+        }
+        console.log( "Addstudentssss",res);
+      })
+
       .catch((err) => {
         console.log("err>>>", err);
         toast.error("Wrong Password");
       });
   };
 
-
   return (
     <>
       <div className="student-form-container">
         <form className="student-form-" onSubmit={handleSubmit}>
-          
           <h2 className="a-2">Add Student</h2>
           <div className="form-group">
             <label htmlFor="roll" className="label1">
@@ -80,7 +82,7 @@ const handleSubmit = (e)=>{
           <div className="form-group">
             <label htmlFor="password" className="label1">
               password
-            </label >
+            </label>
             <input
               type="password"
               id="password"
