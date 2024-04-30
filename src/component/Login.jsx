@@ -79,7 +79,7 @@ const Login = () => {
             </option>
           </select>
         </div>
-        <button className="button" onClick={handleSubmit}>
+        <button className="button1" onClick={handleSubmit}>
           Login
         </button>
       </div>

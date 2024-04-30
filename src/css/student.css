@@ -37,7 +37,7 @@
     margin-bottom: 20px;
 }
 
-label {
+label1 {
     font-weight: bold;
 }
 
@@ -54,23 +54,25 @@ input:focus {
     border-color: #5b9dd9;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #86c0f4;
-    color: #f3051c;
+.submit-1 {
+    display: block;
+    width: 100%;
+    padding: 9px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    font-family: cursive;
     font-size: larger;
+    border-radius: 20px;
+    text-align: center
 }
 
-button:hover {
+/* buttton:hover {
     background-color: #011324;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.label{
+} */
+.label1{
     font-family: cursive;
     font-size: large;
     font-style: italic;

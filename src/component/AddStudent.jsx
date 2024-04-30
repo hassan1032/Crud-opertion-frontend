@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./student.css";
-import { useNavigate } from "react-router-dom";
+import "../css/student.css";
 import axios from "axios";
 import toast from 'react-hot-toast';
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const AddStudent = () => {
-
+const navigate = useNavigate();
 const [grade,setGrade] = useState("");
 const [roll,setRoll] = useState("");
 const [username,setUsername] = useState("");
@@ -16,10 +16,15 @@ const handleSubmit = (e)=>{
     e.preventDefault()
     axios.post(`http://localhost:4000/student/register`, { username, password, roll,grade })
     .then((res) => {
-        console.log("res>>>>>>", res);
+    
+
         Cookies.set("token", res?.data?.token);
        
         toast.success("Student Register SuccessFully");
+        if(res.data.message){
+            navigate("/dashboard");
+
+        }
        
       })
     
@@ -37,7 +42,7 @@ const handleSubmit = (e)=>{
           
           <h2 className="a-2">Add Student</h2>
           <div className="form-group">
-            <label htmlFor="roll" className="label">
+            <label htmlFor="roll" className="label1">
               Roll No
             </label>
             <input
@@ -49,7 +54,7 @@ const handleSubmit = (e)=>{
             />
           </div>
           <div className="form-group">
-            <label htmlFor="username" className="label">
+            <label htmlFor="username" className="label1">
               User Name
             </label>
             <input
@@ -61,7 +66,7 @@ const handleSubmit = (e)=>{
             />
           </div>
           <div className="form-group">
-            <label htmlFor="grade" className="label">
+            <label htmlFor="grade" className="label1">
               Grade
             </label>
             <input
@@ -73,9 +78,9 @@ const handleSubmit = (e)=>{
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password" className="label">
+            <label htmlFor="password" className="label1">
               password
-            </label>
+            </label >
             <input
               type="password"
               id="password"
@@ -84,7 +89,7 @@ const handleSubmit = (e)=>{
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit" className="butt-" onClick={handleSubmit}>
+          <button type="submit" className="submit-1" onClick={handleSubmit}>
             Register
           </button>
         </form>
