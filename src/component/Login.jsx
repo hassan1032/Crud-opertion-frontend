@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 
 import toast from "react-hot-toast";
 
-const Login = () => {
+const Login = ({setRoles}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("admin");
@@ -21,16 +21,14 @@ const Login = () => {
       .then((res) => {
         Cookies.set("token", res?.data?.token);
         if (res.data.role === "admin") {
+          setRoles('admin')
           navigate("/dashboard");
           toast.success("Admin logged in successfully");
-        }else if(res.data.role === "student"){
-            
-        toast.success("Student logged in successfully");
+        } else if (res.data.role === "student") {
+          setRoles('student')
+          toast.success("Student logged in successfully");
           navigate("/");
         }
-        
-
-        // console.log( "ffffff",res);
       })
 
       .catch((err) => {
