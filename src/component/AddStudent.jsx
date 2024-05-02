@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddStudent = () => {
   const navigate = useNavigate();
+  const token = Cookies.get("token");
   const [grade, setGrade] = useState("");
   const [roll, setRoll] = useState("");
   const [username, setUsername] = useState("");
@@ -20,16 +21,16 @@ const AddStudent = () => {
         password,
         roll,
         grade,
+        headers: {
+          Authorization: `${token}`,
+        },
       })
       .then((res) => {
-        Cookies.set("token", res?.data?.token);
-
         toast.success("Student Register SuccessFully");
         if (res.data.message) {
-
           navigate("/dashboard");
         }
-        console.log( "Addstudentssss",res);
+        console.log("Addstudentssss", res);
       })
 
       .catch((err) => {

@@ -10,6 +10,7 @@ import AddStudent from "./component/AddStudent";
 import Logout from "./component/Logout";
 import axios from "axios";
 import Cookies from "js-cookie";
+import AddBook from "./component/AddBook";
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
         reverseOrder={false}
         toastOptions={{
           style: {
-            fontSize: "30px",
+            fontSize: "20px",
           },
           duration: 4000,
           minWidth: "250px",
@@ -56,6 +57,7 @@ function App() {
           <Route path="/dashboard" element={<Dashborad />} />
           <Route path="/addstudent" element={<AddStudent />} />
           <Route path="/logout" element={<Logout setRoles={setRole} />} />
+          <Route path="/addbook" element={<AddBook/>} />
         </Routes>
       </BrowserRouter>
     </>

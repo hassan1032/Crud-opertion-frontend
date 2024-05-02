@@ -13,6 +13,8 @@ body{
   position: fixed;
   width: 100%;
   left: 0;
+  z-index: 1000;
+  
   }
   
   .navbar-brand {
