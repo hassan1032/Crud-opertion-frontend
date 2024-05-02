@@ -11,6 +11,7 @@ import Logout from "./component/Logout";
 import axios from "axios";
 import Cookies from "js-cookie";
 import AddBook from "./component/AddBook";
+import EditBook from "./component/EditBook";
 
 
 function App() {
@@ -25,7 +26,6 @@ function App() {
         },
       })
       .then((res) => {
-        console.log("app.js response", res);
         if (res.data.login) {
           setRole(res.data.role);
         
@@ -58,6 +58,7 @@ function App() {
           <Route path="/addstudent" element={<AddStudent />} />
           <Route path="/logout" element={<Logout setRoles={setRole} />} />
           <Route path="/addbook" element={<AddBook/>} />
+          <Route path="/book/:id" element={<EditBook/>} />
         </Routes>
       </BrowserRouter>
     </>

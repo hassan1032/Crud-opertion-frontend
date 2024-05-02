@@ -29,8 +29,6 @@ const AddBook = () => {
         toast.success("Book Added Successfully");
      
             navigate('/books')
-        
-        console.log("Add book response:", res);
       })
       .catch((err) => {
         console.log("err>>>", err);

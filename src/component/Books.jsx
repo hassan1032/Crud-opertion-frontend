@@ -8,7 +8,7 @@ const Books = () => {
     axios.get('http://localhost:4000/book/books')
       .then(res => {
         setBooks(res.data)
-        console.log(res.data)
+      
       }).catch(err => {
         console.log(err)
       })

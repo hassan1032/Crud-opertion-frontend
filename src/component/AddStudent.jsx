@@ -30,7 +30,7 @@ const AddStudent = () => {
         if (res.data.message) {
           navigate("/dashboard");
         }
-        console.log("Addstudentssss", res);
+        
       })
 
       .catch((err) => {
