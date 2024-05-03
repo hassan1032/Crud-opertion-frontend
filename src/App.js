@@ -12,6 +12,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import AddBook from "./component/AddBook";
 import EditBook from "./component/EditBook";
+import DeleteBook from "./component/DeleteBook";
 
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
           style: {
             fontSize: "20px",
           },
-          duration: 4000,
+          duration: 3000,
           minWidth: "250px",
         }}
       />
@@ -59,6 +60,7 @@ function App() {
           <Route path="/logout" element={<Logout setRoles={setRole} />} />
           <Route path="/addbook" element={<AddBook/>} />
           <Route path="/book/:id" element={<EditBook/>} />
+          <Route path="/delete/:id" element={<DeleteBook/>} />
         </Routes>
       </BrowserRouter>
     </>

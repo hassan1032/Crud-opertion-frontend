@@ -1,16 +1,26 @@
 /* Books.css */
+a {
+  color: rgb(252 253 254);
+  /* text-decoration: underline; */
+  text-decoration: none;
+  color: white;
+  font-style: italic;
+    font-size: large;
+    font-weight: 400;
+
+}
 
 .card {
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(227, 77, 77, 0.1);
     transition: box-shadow 0.3s ease;
   }
   
   .card:hover {
-    box-shadow: 0 8px 16px rgba(249, 96, 96, 0.2);
+    box-shadow: 0 8px 16px rgba(250, 70, 70, 0.2);
   
 
   }
@@ -47,8 +57,16 @@
   
   
   .book-author {
-    margin-top: 5px;
-    color: #666;
+    margin-top: 6px;
+    color: #f05353;
+    font-family: cursive;
+    font-size: 30px;
+    font-weight: 300;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
   }
   
   .book-actions {
@@ -58,17 +76,49 @@
     background-color: #f9f9f9;
   }
   
-  .btn {
+  .btn-1 {
     padding: 8px 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     background-color: #007bff;
-    color: #fff;
+    color: white;
     font-size: 1rem;
+    text-decoration: none;
+    font-style: italic;
+    font-size: large;
+    font-weight: 400;
   }
   
-  .btn:hover {
-    background-color: #0056b3;
+  .btn-1:hover {
+    background-color: #1f3348;
   }
   
+  @media (min-width: 600px) {
+    .card {
+        width: 45%; /* Adjust width for larger screens */
+    }
+    .card-body {
+        padding: 1.25rem;
+    }
+    .card-title {
+        font-size: 1.25rem;
+    }
+    .book-author {
+        font-size: 1rem;
+    }
+    .btn-1 {
+        font-size: 1rem;
+    }
+    .book-actions {
+        padding: 1.25rem;
+    }
+
+
+
+
+
+  }
+  
+
+ 
